@@ -1,7 +1,7 @@
-import { RolesEntity } from './roles.entity';
+import { Role } from './roles.entity';
 
-describe('RolesEntity', () => {
+describe('Role', () => {
   it('should be defined', () => {
-    expect(new RolesEntity()).toBeDefined();
+    expect(new Role()).toBeDefined();
   });
 });
