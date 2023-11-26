@@ -76,9 +76,6 @@
     ],
     "rootDir": "src",
     "testRegex": ".*\\.spec\\.ts$",
-    "transform": {
-      "^.+\\.(t|j)s$": "ts-jest"
-    },
     "collectCoverageFrom": [
       "**/*.(t|j)s"
     ],
@@ -86,12 +83,10 @@
     "testEnvironment": "node",
     "moduleDirectories": ["node_modules", "src"],
     "moduleNameMapper": {
-      "^src/(.*)$": "<rootDir>/src/$1"
+      "^src/(.*)$": "<rootDir>/$1"
     },
-    "globals": {
-      "ts-jest": {
-        "tsconfig": "tsconfig.json"
-      }
+    "transform": {
+      "^.+\\.(t|j)s$": ["ts-jest", { "tsconfig": "tsconfig.json" }]
     }
   }
 }
