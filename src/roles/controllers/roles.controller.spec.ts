@@ -1,6 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 
 import { CreateRoleDto } from '../dto/create-role.dto';
+import { JwtModule } from '@nestjs/jwt';
 import { RolesController } from './roles.controller';
 import { RolesService } from '../services/roles.service';
 import { UpdateRoleDto } from '../dto/update-role.dto';
@@ -24,6 +25,12 @@ describe('RolesController', () => {
             delete: jest.fn(),
           },
         },
+      ],
+      imports: [
+        JwtModule.register({
+          secret: 'secret',
+          signOptions: { expiresIn: '1d' },
+        }),
       ],
     }).compile();
 

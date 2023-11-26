@@ -1,6 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 
 import { CreateUserDto } from '../dto/create-user.dto';
+import { JwtModule } from '@nestjs/jwt';
 import { UpdateUserDto } from '../dto/update-user.dto';
 import { UsersController } from './users.controller';
 import { UsersService } from '../services/users.service';
@@ -24,6 +25,12 @@ describe('UsersController', () => {
             delete: jest.fn(),
           },
         },
+      ],
+      imports: [
+        JwtModule.register({
+          secret: 'secret',
+          signOptions: { expiresIn: '1d' },
+        }),
       ],
     }).compile();
 
