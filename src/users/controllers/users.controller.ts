@@ -57,7 +57,6 @@ export class UsersController {
   findByName(@Param('username') username: string) {
     return this.usersService.findByName(username);
   }
-
   @Put(':id')
   @ApiOperation({ summary: 'Update user' })
   @ApiResponse({
