@@ -30,7 +30,7 @@ jobs:
         key: ${{ secrets.VPS_SSH_KEY }}
         debug: true
         script: |
-          cd /home/kronnos/projects
+          cd /home/kronnos/projects/sigmabk
           git pull
           npm install --production
           pm2 restart all
